@@ -1,8 +1,12 @@
-import logo from "./logo.svg";
 import "./assets/styles/App.scss";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Outlet />
+    </div>
+  );
 }
 
 export default App;
