@@ -15,6 +15,7 @@
     "react-scripts": "^5.0.1",
     "router-dom": "^2.2.10",
     "sass": "^1.58.3",
+    "tw-elements": "^1.0.0-beta1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

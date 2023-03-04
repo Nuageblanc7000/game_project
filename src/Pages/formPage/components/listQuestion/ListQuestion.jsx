@@ -1,6 +1,6 @@
 import Question from "../question/Question";
 
-export default function ListQuestion({ questions = [] }) {
+export default function ListQuestion({ questions = [], handleDelete }) {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-4 mb-4">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -18,9 +18,23 @@ export default function ListQuestion({ questions = [] }) {
           </tr>
         </thead>
         <tbody>
-          {questions.length
-            ? questions.map((q) => <Question question={q} key={q.id} />)
-            : ""}
+          {questions.length ? (
+            questions.map((q) => (
+              <Question
+                question={q}
+                handleDelete={() => handleDelete(q)}
+                key={q.id}
+              />
+            ))
+          ) : (
+            <tr>
+              <td>
+                <div>
+                  <h2 className="text-center">La liste est vide</h2>
+                </div>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

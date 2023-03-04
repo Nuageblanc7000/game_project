@@ -10,7 +10,7 @@ export default function FormPage() {
     question: "",
     response: "",
     Input: [
-      { indice_1: "" },
+      { indice_1: defaultResponse },
       { indice_2: "" },
       { indice_3: "" },
       { indice_4: "" },
@@ -20,11 +20,10 @@ export default function FormPage() {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, submitCount },
+    formState: { isSubmitting },
   } = useForm(defaultValues);
   function handleChange(e) {
     e.stopPropagation();
-    console.log(e.target.value);
     setDefaultResponse(e.target.value);
   }
 
@@ -32,6 +31,9 @@ export default function FormPage() {
     setQuestions([...questions, { ...values, id: crypto.randomUUID() }]);
     reset();
     setDefaultResponse("");
+  }
+  function handleDelete(question) {
+    setQuestions(questions.filter((q) => q.id !== question.id));
   }
   console.log(questions);
 
@@ -78,9 +80,9 @@ export default function FormPage() {
               name={"indice_1"}
               options={{
                 name: "Input[0]",
-                options: { required: true, value: defaultResponse },
+                options: { value: defaultResponse },
               }}
-              value={defaultResponse}
+              defaultResponse={defaultResponse}
             />
             <Input
               register={register}
@@ -109,7 +111,7 @@ export default function FormPage() {
           </button>
         </form>
       </div>
-      <ListQuestion questions={questions} />
+      <ListQuestion questions={questions} handleDelete={handleDelete} />
     </div>
   );
 }
