@@ -1,0 +1,265 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+	<title>N09-ai</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m688 688h-688v-688h688z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="m688 688h-688v-688h688z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp3">
+			<path d="m688 688h-688v-688h688z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp4">
+			<path d="m502.66 502.66h297.34v297.34h-297.34z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp5">
+			<path d="m502.66 502.66h297.34v297.34h-297.34z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp6">
+			<path d="m502.66 502.66h297.34v297.34h-297.34z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp7">
+			<path d="m688 688h-688v-688h688z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp8">
+			<path d="m688 688h-688v-688h688z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp9">
+			<path d="m688 688h-688v-688h688z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp10">
+			<path d="m502.66 502.66h297.34v297.34h-297.34z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp11">
+			<path d="m502.66 502.66h297.34v297.34h-297.34z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp12">
+			<path d="m502.66 502.66h297.34v297.34h-297.34z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp13">
+			<path d="m688 688h-688v-688h688z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp14">
+			<path d="m688 688h-688v-688h688z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp15">
+			<path d="m688 688h-688v-688h688z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp16">
+			<path d="m502.66 502.66h297.34v297.34h-297.34z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp17">
+			<path d="m502.66 502.66h297.34v297.34h-297.34z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp18">
+			<path d="m502.66 502.66h297.34v297.34h-297.34z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: #362b7d } 
+		.s1 { fill: #483486 } 
+		.s2 { fill: #6e4799 } 
+		.s3 { fill: #a060b2 } 
+		.s4 { fill: #3e2f81 } 
+	</style>
+	<g id="Layer 1">
+		<g id="&lt;Group&gt;">
+			<g id="&lt;Group&gt;">
+				<g id="&lt;Group&gt;">
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp1)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp2)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp3)">
+					</g>
+				</g>
+				<g id="&lt;Group&gt;">
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp4)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp5)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp6)">
+					</g>
+				</g>
+			</g>
+			<g id="&lt;Group&gt;">
+				<g id="&lt;Group&gt;">
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp7)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp8)">
+						<g id="&lt;Group&gt;">
+							<g id="&lt;Group&gt;">
+								<path id="&lt;Path&gt;" class="s0" d="m-23.5 85.6l-47 75.7h94z"/>
+								<path id="&lt;Path&gt;" class="s1" d="m132.5 176.4l-47 75.8h94.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m185.7 268.5l-47 75.7h94z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m185.1 85.6l-47 75.7h94z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m344.6-6.2l-47 75.9h94z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m27.9 363.9l-47 75.8h94.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m185.1 248.8l47-75.8h-94z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m239.1 338.8l47.1-75.8h-94.1z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m132.8 337.1l47-75.8h-94z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m134 522.9l47-75.8h-94z"/>
+								<path id="&lt;Path&gt;" class="s0" d="m81.4 431.4l47-75.8h-94z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m394.6 432l47-75.8h-94z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m186.6 64.9l47-75.8h-94z"/>
+								<path id="&lt;Path&gt;" class="s1" d="m28.5 339.8l99.6-167.4h-199.2z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m292 250.1l99.6-167.4h-199.2z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m343.2 179.2l-99.6 167.4h199.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m184.6-82.6l-19.9 32.1h39.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m55 314.1l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m107.3 314.1l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m82.4 267.8l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m238.4 175.2l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m210.2 223.2l-20 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m263.3 223.2l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m237.3-69.6l-19.9 32.1h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m211.9 40.6l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m264.2 40.6l-20 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m132.7 361.4l-19.9 32.2h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m107.6 404.9l-19.9 32.1h39.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m159.6 404.9l-19.9 32.1h39.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m27 449.5l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m159 497.5l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m81.1 340.5l19.9-32h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m239.7 248.8l19.9-32.1h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m238 67.9l19.9-32h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m368.3 204.2l19.9-32h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m133.7 434.8l19.9-32h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m322.9 386.8l19.9-32h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m54.8 480.5l19.9-32.1h-39.8z"/>
+							</g>
+							<g id="&lt;Group&gt;">
+								<path id="&lt;Path&gt;" class="s2" d="m241.7 357.6l-47 75.8h94.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m397.7 448.5l-47 75.8h94.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m450.9 540.5l-47 75.8h94z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m450.3 357.6l-47 75.8h94z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m450.3 520.8l47-75.8h-94z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m399.1 794.9l47.1-75.8h-94.1z"/>
+								<path id="&lt;Path&gt;" class="s0" d="m451.7 337l47.1-75.8h-94.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m424.8 220.5l-20 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m320.1 586.1l-19.8 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m372.5 586.1l-19.9 32h39.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m347.6 539.7l-19.9 32.2h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m503.6 447.2l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m475.3 495.2l-19.9 32h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m528.5 495.2l-19.9 32h39.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m504.5 265.4l-19.9 32.1h39.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m477 312.6l-19.9 32.1h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m529.3 312.6l-19.9 32.1h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m397.8 633.5l-19.8 32.1h39.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m424.8 676.9l-20 32.1h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m292.2 721.5l-19.9 32.1h39.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m424.2 769.5l-19.9 32.1h39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m346.3 612.6l19.9-32.1h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m503.1 340l19.9-32.1h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m633.5 476.3l19.9-32.1h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m398.8 706.8l20-32h-39.8z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m320 752.6l19.9-32.2h-39.8z"/>
+							</g>
+						</g>
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp9)">
+					</g>
+				</g>
+				<g id="&lt;Group&gt;">
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp10)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp11)">
+						<g id="&lt;Group&gt;">
+							<g id="&lt;Group&gt;">
+								<path id="&lt;Path&gt;" class="s0" d="m774.3 807.4l20.4-32.7h-40.7z"/>
+								<path id="&lt;Path&gt;" class="s1" d="m706.9 768.1l20.3-32.7h-40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m683.9 728.4l20.4-32.8h-40.7z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m684.2 807.4l20.3-32.7h-40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m615.3 847.1l20.3-32.8h-40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m752.1 687.1l20.3-32.7h-40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m684.2 736.9l-20.3 32.7h40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m660.9 698l-20.4 32.8h40.7z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m706.8 698.8l-20.3 32.7h40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m706.3 618.4l-20.3 32.8h40.6z"/>
+								<path id="&lt;Path&gt;" class="s0" d="m729 657.9l-20.3 32.8h40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m593.7 657.7l-20.4 32.7h40.7z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m683.6 816.4l-20.4 32.7h40.7z"/>
+								<path id="&lt;Path&gt;" class="s1" d="m751.9 697.6l-43.1 72.3h86.1z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m638.9 737.2l-43.1 72.4h86.1z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m615.9 766.9l43-72.3h-86z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m720.2 835.7l8.6-13.9-17.2 0.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m740.4 708.7l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m717.8 708.7l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m728.6 728.7l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m661.2 768.7l8.5-13.9h-17.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m673.4 748l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m650.4 748l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m660.8 847.2l8.6-13.8h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m672.6 826.9l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m650 826.9l8.6-13.9h-17.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m706.8 688.2l8.6-13.9h-17.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m717.7 669.4l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m695.2 669.4l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m752.5 650.1l8.6-13.8h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m695.5 629.4l8.6-13.8h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m729.2 697.2l-8.6 13.9h17.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m660.6 736.9l-8.6 13.8h17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m661.3 815l-8.5 13.9h17.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m605 756.1l-8.6 13.9h17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m706.4 656.4l-8.6 13.9h17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m624.7 677.2l-8.6 13.9h17.1z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m740.5 636.7l-8.6 13.9h17.2z"/>
+							</g>
+							<g id="&lt;Group&gt;">
+								<path id="&lt;Path&gt;" class="s2" d="m659.7 689.8l20.4-32.7h-40.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m592.3 650.6l20.3-32.8h-40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m569.3 610.8l20.4-32.7h-40.7z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m569.6 689.8l20.3-32.7h-40.6z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m569.6 619.3l-20.3 32.8h40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m591.7 500.9l-20.3 32.7h40.6z"/>
+								<path id="&lt;Path&gt;" class="s0" d="m569 698.8l-20.4 32.7h40.6z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m580.6 749.1l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m625.8 591.1l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m603.2 591.1l8.6-13.9h-17.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m614 611.1l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m546.6 651.1l8.5-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m558.8 630.4l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m535.8 630.4l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m546.1 729.7l8.7-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m558 709.3l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m535.4 709.3l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m592.3 570.6l8.6-13.8h-17.3z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m580.6 551.8l8.6-13.8h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m637.9 532.6l8.6-13.9h-17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m580.9 511.8l8.5-13.8h-17.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m614.6 579.7l-8.7 13.8h17.2z"/>
+								<path id="&lt;Path&gt;" class="s3" d="m546.8 697.5l-8.6 13.8h17.1z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m490.4 638.6l-8.6 13.8h17.2z"/>
+								<path id="&lt;Path&gt;" class="s4" d="m591.8 538.9l-8.6 13.9h17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m510.1 559.7l-8.7 13.8h17.2z"/>
+								<path id="&lt;Path&gt;" class="s2" d="m625.9 519.1l-8.6 13.9h17.2z"/>
+							</g>
+						</g>
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp12)">
+					</g>
+				</g>
+			</g>
+			<g id="&lt;Group&gt;">
+				<g id="&lt;Group&gt;">
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp13)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp14)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp15)">
+					</g>
+				</g>
+				<g id="&lt;Group&gt;">
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp16)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp17)">
+					</g>
+					<g id="&lt;Clip Group&gt;" clip-path="url(#cp18)">
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
