@@ -5,9 +5,12 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Outlet />
-    </div>
+    <>
+      {/* mettre le header et footer autour de APP */}
+      <div className="App">
+        <Outlet />
+      </div>
+    </>
   );
 }
 
