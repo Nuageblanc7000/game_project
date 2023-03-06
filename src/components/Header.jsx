@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="navbar bg-neutral text-neutral-content">
+    <div className="navbar bg-neutral text-neutral-content flex-wrap">
       <div className="flex-1">
         <a href="#" className="btn btn-ghost normal-case text-xl">
           Communication

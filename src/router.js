@@ -6,13 +6,15 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    index: true,
-    element: <HomePage />,
-  },
-  {
-    path: "/create",
-    element: <FormPage />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "/create",
+        element: <FormPage />,
+      },
+    ],
   },
 ]);
