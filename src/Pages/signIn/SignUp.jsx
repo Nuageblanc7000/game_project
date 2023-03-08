@@ -1,5 +1,35 @@
+import { useForm } from "react-hook-form";
 import styles from "./signUp.module.scss";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
 export default function SignUp() {
+  const schema = yup.object({
+    pseudo: yup
+      .string()
+      .min(5, "le pseudo doit faire minimum 5 caractères")
+      .max(80, "le pseudo doit faire maximum 80 caractères")
+      .required("Veuillez remplir ce champ"),
+    password: yup
+      .string()
+      .min(10, "le mot de passe doit faire minimum 10 caractères")
+      .max(20, "le mot de passe doit faire maximum 20 caractères")
+      .required("Veuillez remplir ce champ"),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref.password, null], "le password ne correspond pas ")
+      .required("Veuillez remplir ce champ"),
+  });
+  const initialValues = {
+    pseudo: "",
+    password: "",
+    confirmPassword: "",
+  };
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({ initialValues, resolver: yupResolver(schema) });
   return (
     <div className={`${styles.signUp} flex items-center justify-center`}>
       <div className={`flex flex-col items-center justify-center w-full`}>
