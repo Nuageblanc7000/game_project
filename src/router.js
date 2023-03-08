@@ -21,10 +21,10 @@ export const router = createBrowserRouter([
         path: "/team/:team",
         element: <TeamPage />,
       },
+      {
+        path: "/signUp",
+        element: <SignUp />,
+      },
     ],
-  },
-  {
-    path: "/signUp",
-    element: <SignUp />,
   },
 ]);
