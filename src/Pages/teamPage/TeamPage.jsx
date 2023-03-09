@@ -6,11 +6,15 @@ import teamB from "../../data/teamB.json";
 
 export default function TeamPage() {
     const url = useParams();
+
     const [activeQuestion, setActiveQuestion] = useState(0);
     const [typeChoice, setTypeChoice] = useState(null)
     const [showTypeChoice, setShowTypeChoice] = useState(true)
     const [showNext, setShowNext] = useState(false)
     const [active, setActive] = useState(null)
+    const [isEmpty, setIsEmpty] = useState(true)
+    const [inputValue, setInputValue] = useState(null)
+
     const teamColor = url.team == "team-a" ? "bg-red-200" : "bg-blue-200";
     const textTeamColor = url.team == "team-a" ? "text-red-800" : "text-blue-800";
     const team = url.team === "team-a" ? teamA : teamB
@@ -39,8 +43,27 @@ export default function TeamPage() {
         setActive(item)
         setShowNext(true)
 
-        if (item == team[activeQuestion].reponse) {
-            console.log('OK')
+        if (item != null) {
+            if (item === team[activeQuestion].reponse) {
+                console.log('OK')
+            }
+        } else {
+
+            if (inputValue.toLowerCase() === (team[activeQuestion].reponse).toString().toLowerCase()) {
+                console.log('OK')
+            }
+        }
+    }
+
+    const handleChange = (e) => {
+        const value = e.target.value
+
+        if (value == "") {
+            setIsEmpty(true)
+        } else {
+            setIsEmpty(false)
+            setInputValue(e.target.value)
+
         }
     }
 
@@ -57,7 +80,9 @@ export default function TeamPage() {
                     team={team}
                     activeQuestion={activeQuestion}
                     handleClick={handleClickVerifyResponse}
+                    handleChange={handleChange}
                     active={active}
+                    empty={isEmpty}
                 />
 
                 <div
