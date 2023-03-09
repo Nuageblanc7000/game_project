@@ -4,9 +4,9 @@ const Header = () => {
   return (
     <div className="navbar bg-neutral text-neutral-content flex-wrap">
       <div className="flex-1">
-        <a href="#" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
           Communication
-        </a>
+        </Link>
       </div>
       <div className="flex-1">
         <ul className="menu menu-horizontal px-1">
