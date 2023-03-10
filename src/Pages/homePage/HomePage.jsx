@@ -1,5 +1,5 @@
 import styles from "./homePage.module.scss";
-import signUpBack from "../../assets/images/signupBack.jpg";
+import signUpBack from "../../assets/images/signUp.svg";
 import sciences from "../../assets/images/sciences.svg";
 import nature from "../../assets/images/nature.svg";
 import politic from "../../assets/images/politic.svg";
