@@ -1,10 +1,8 @@
 import "./assets/styles/App.scss";
 import "./assets/styles/index.css";
-
-import Header from "./components/Header";
-
 import { Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
 
 function App() {
   return (

@@ -5,7 +5,7 @@
   background-image: url("../../assets/images/brain.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: #276fb5;
+  background-color: var(--color4);
 
   position: relative;
   &::before {

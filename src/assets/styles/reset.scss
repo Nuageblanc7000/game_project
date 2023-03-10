@@ -8,3 +8,6 @@ body {
   height: 100%;
   grid-template-rows: auto 1fr auto;
 }
+.App {
+  background-color: var(--body);
+}
