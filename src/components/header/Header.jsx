@@ -1,13 +1,13 @@
 import styles from "./header.module.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className={`${styles.header} navbar  text-neutral-content flex-wrap`}>
       <div className="flex-1">
-        <a href="#" className="btn btn-ghost normal-case text-xl">
-          Communication
-        </a>
+        <NavLink to="/" className="btn btn-ghost normal-case text-xl">
+          Brain Game
+        </NavLink>
       </div>
       <div className="flex-1">
         <ul className="menu menu-horizontal px-1">

@@ -12,7 +12,7 @@ export default function HomePage() {
               <h1 className="mb-5 text-5xl text-white font-bold">
                 Hello there
               </h1>
-              <p className="mb-5 text-white shadow-xs text-1xl font-bold ">
+              <p className="mb-5 text-white shadow-xs text-1xl font-bold  px-4">
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut
                 assumenda excepturi exercitationem quasi. In deleniti eaque aut
                 repudiandae et a id nisi.

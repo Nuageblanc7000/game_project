@@ -2,7 +2,7 @@ import styles from "./footer.module.scss";
 export default function Footer() {
   return (
     <footer
-      className={` ${styles.footer} footer footer-center p-10 text-white`}
+      className={` ${styles.footer}  footer footer-center p-4 text-white`}
     >
       <div>
         <svg
