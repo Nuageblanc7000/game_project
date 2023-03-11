@@ -1,23 +1,28 @@
 [
-    {
-        "id": 1,
-        "question": "De combien de pilliers est composé la culture d'entreprise ?",
-        "reponse": 4,
-        "indicesParDeux": [6, 4],
-        "indicesParQuatre": [3, 4, 6, 5]
-    },
-    {
-        "id": 2,
-        "question": "De quoi un rite est-il constitué ?",
-        "reponse": "Pratique des valeurs",
-        "indicesParDeux": ["Pratique des valeurs", "Croyance"],
-        "indicesParQuatre": ["Philosophie", "Croyance", "Pratique des valeurs", "Représention extérieure"]
-    }, 
-    {
-        "id": 3,
-        "question": "Dans quelle catégorie de culture d'entreprise classez-vous le recrutement ?",
-        "reponse": "Rite",
-        "indicesParDeux": ["Symbole", "Rite"],
-        "indicesParQuatre": ["Symbole", "Mite", "Rite", "Valeur"]
-    }
+  {
+    "id": 1,
+    "question": "De combien de pilliers est composé la culture d'entreprise ?",
+    "reponse": 4,
+    "indicesParDeux": [6, 4],
+    "indicesParQuatre": [3, 4, 6, 5]
+  },
+  {
+    "id": 2,
+    "question": "De quoi un rite est-il constitué ?",
+    "reponse": "Pratique des valeurs",
+    "indicesParDeux": ["Pratique des valeurs", "Croyance"],
+    "indicesParQuatre": [
+      "Philosophie",
+      "Croyance",
+      "Pratique des valeurs",
+      "Représention extérieure"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Dans quelle catégorie de culture d'entreprise classez-vous le recrutement ?",
+    "reponse": "Rite",
+    "indicesParDeux": ["Symbole", "Rite"],
+    "indicesParQuatre": ["Symbole", "Mite", "Rite", "Valeur"]
+  }
 ]
