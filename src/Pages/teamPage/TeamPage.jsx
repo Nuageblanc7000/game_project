@@ -14,13 +14,29 @@ export default function TeamPage() {
     const [active, setActive] = useState(null)
     const [isEmpty, setIsEmpty] = useState(true)
     const [inputValue, setInputValue] = useState(null)
+    const [itemSelected, setItemSelected] = useState("")
 
-    const teamColor = url.team == "team-a" ? "bg-red-200" : "bg-blue-200";
-    const textTeamColor = url.team == "team-a" ? "text-red-800" : "text-blue-800";
     const team = url.team === "team-a" ? teamA : teamB
     const handleClick = () => {
         if (activeQuestion < teamA.length - 1) {
             setActiveQuestion((p) => p + 1);
+            setShowTypeChoice(true)
+            setShowNext(false)
+            setTypeChoice(null)
+
+            // If answer selected is true
+            if (itemSelected === team[activeQuestion].reponse) {
+
+                // Points distribution
+                if (typeChoice === 1) {
+                    console.log("+1 point")
+                } else if (typeChoice === 2) {
+                    console.log("+2 points")
+                } else {
+                    console.log("+5 points")
+                }
+            }
+
         }
     };
 
@@ -44,9 +60,8 @@ export default function TeamPage() {
         setShowNext(true)
 
         if (item != null) {
-            if (item === team[activeQuestion].reponse) {
-                console.log('OK')
-            }
+            setItemSelected(item)
+
         } else {
 
             if (inputValue.toLowerCase() === (team[activeQuestion].reponse).toString().toLowerCase()) {
@@ -63,13 +78,12 @@ export default function TeamPage() {
         } else {
             setIsEmpty(false)
             setInputValue(e.target.value)
-
         }
     }
 
     return (
-        <div className="flex justify-center items-center h-full">
-            <div className="container mx-auto">
+        <div className="flex justify-center items-center h-full bg-secondary/20">
+            <div className="container mx-auto p-4">
 
                 <h1 className="text-2xl mt-4 font-bold">
                     {url.team == "team-a" ? "Equipe A" : "Equipe B"}
@@ -85,38 +99,38 @@ export default function TeamPage() {
                     empty={isEmpty}
                 />
 
-                <div
-                    className={`sm:w-8/12 mx-auto p-4 rounded-lg ${teamColor} min-h-[150px] flex justify-center items-center`}>
-                    <h2 className={`font-bold ${textTeamColor}`}>
-                        {team[activeQuestion].question}
-                    </h2>
-                </div>
-
-                <div className="btn-group mt-4 ml-[50%] -translate-x-[50%] min-h-[50px]">
-
-                    {showTypeChoice && (
-                        <>
-                            <button onClick={handleClickDuo} className="btn">
-                                Duo
-                            </button>
-                            <button onClick={handleClickCarre} className="btn">
-                                Carré
-                            </button>
-                            <button onClick={handleClickCash} className="btn">
-                                Cash
-                            </button>
-                        </>
-                    )}
-                </div>
-
                 {showNext && (
                     <button
                         onClick={handleClick}
-                        className="block mx-auto mt-4 btn btn-success"
+                        className="block mx-auto btn btn-success my-4"
                     >
                         Suivant
                     </button>
                 )}
+
+                <div
+                    className={` mx-auto p-4 rounded-lg min-h-[150px] bg-white my-8 flex justify-center items-center shadow-xl border border-neutral-200`}>
+                    <h2 className={`font-bold text-neutral`}>
+                        {team[activeQuestion].question}
+                    </h2>
+                </div>
+
+
+                {showTypeChoice && (
+                    <div className="btn-group mt-4 ml-[50%] -translate-x-[50%] min-h-[50px]">
+                        <button onClick={handleClickDuo} className="btn">
+                            Duo
+                        </button>
+                        <button onClick={handleClickCarre} className="btn">
+                            Carré
+                        </button>
+                        <button onClick={handleClickCash} className="btn">
+                            Cash
+                        </button>
+                    </div>
+                )}
+
+
 
             </div>
         </div>
