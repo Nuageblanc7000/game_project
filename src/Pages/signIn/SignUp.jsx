@@ -3,7 +3,11 @@ import styles from "./signUp.module.scss";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+import { createUser } from "../../apis/users";
+import { Navigate, useNavigate } from "react-router-dom";
+
 export default function SignUp() {
+  const navigate = useNavigate();
   const schema = yup.object({
     pseudo: yup
       .string()
@@ -28,12 +32,20 @@ export default function SignUp() {
     password: "",
     confirmPassword: "",
   };
+
   const {
     handleSubmit,
     register,
-    formState: { errors },
-  } = useForm({ initialValues, resolver: yupResolver(schema) });
-  function submit(value) {}
+    formState: { errors, isSubmitting },
+  } = useForm({
+    initialValues,
+    resolver: yupResolver(schema),
+    mode: "onSubmit",
+  });
+  async function submit(value) {
+    // const user = createUser(value);
+    navigate("/");
+  }
   return (
     <div className={`${styles.signUp} flex items-center justify-center`}>
       <div className={`flex flex-col items-center justify-center w-full `}>
@@ -84,7 +96,10 @@ export default function SignUp() {
                 ) : null}
               </div>
             </div>
-            <button className="btn btn-outline btn-primary my-2 w-full max-w-md">
+            <button
+              disabled={isSubmitting}
+              className="btn btn-outline btn-primary my-2 w-full max-w-md"
+            >
               S'inscrire
             </button>
           </form>
