@@ -1,4 +1,14 @@
-export default function TypeChoice({typeChoice, team, activeQuestion, handleClick, handleChange, active, empty}) {
+export default function TypeChoice({
+                                       typeChoice,
+                                       team,
+                                       activeQuestion,
+                                       handleClick,
+                                       handleChange,
+                                       active,
+                                       empty,
+                                       rightAnswer
+                                   }) {
+
 
     // If type of choice is Duo
     if (typeChoice === 1) {
@@ -6,7 +16,7 @@ export default function TypeChoice({typeChoice, team, activeQuestion, handleClic
             <div className="flex flex-wrap justify-center items-center p-4 gap-4">
                 {team[activeQuestion].indicesParDeux.map((item, index) => {
                     return (
-                        <button onClick={() => handleClick(item)} key={index}
+                        <button onClick={(e) => handleClick(e, item)} key={index}
                                 className={`${active == item ? 'bg-primary' : 'bg-primary/75'} hover:bg-primary rounded-lg flex-initial w-80 p-4 text-white font-semibold`}>{item}</button>
                     )
                 })}
@@ -20,7 +30,7 @@ export default function TypeChoice({typeChoice, team, activeQuestion, handleClic
             <div className="flex flex-wrap justify-center items-center p-4 min-h-[200px] gap-4">
                 {team[activeQuestion].indicesParQuatre.map((item, index) => {
                     return (
-                        <button onClick={() => handleClick(item)} key={index}
+                        <button onClick={(e) => handleClick(e, item)} key={index}
                                 className={`${active === item ? 'bg-primary' : 'bg-primary/75'} hover:bg-primary rounded-lg flex-initial w-80 p-4 text-white font-semibold`}>{item}</button>
                     )
                 })}
@@ -45,7 +55,7 @@ export default function TypeChoice({typeChoice, team, activeQuestion, handleClic
                         <button
                             type="button"
                             className={`btn ${empty ? 'btn-disabled' : 'btn-success'}`}
-                            onClick={() => handleClick(null)}
+                            onClick={(e) => handleClick(e, null)}
                         >
                             Confirmer
                         </button>
@@ -56,8 +66,6 @@ export default function TypeChoice({typeChoice, team, activeQuestion, handleClic
             </div>
         )
     }
-
-
 
 
 }
