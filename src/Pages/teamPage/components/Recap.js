@@ -14,7 +14,7 @@ export default function Recap({userResponses, questions, points}) {
                     </tr>
                     </thead>
                     <tbody>
-                    {userResponses.map((r, index) => r.toString() === questions[index].reponse.toString()
+                    {userResponses.map((r, index) => r.toString().toLowerCase() === questions[index].reponse.toString().toLowerCase()
                         ? (
                             <Fragment key={index}>
                                 <tr>

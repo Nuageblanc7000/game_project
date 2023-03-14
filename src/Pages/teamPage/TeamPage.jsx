@@ -1,107 +1,61 @@
 import {useParams} from "react-router-dom";
-import {useState} from "react";
+import {useReducer} from "react";
 import TypeChoice from './components/TypeChoice';
 import teamA from "../../data/teamA.json";
 import teamB from "../../data/teamB.json";
 import NextButton from "./components/NextButton";
 import Recap from "./components/Recap";
 import Questions from "./components/Questions";
+import TeamReducer from "./reducer/TeamReducer";
+import ButtonChoice from "./components/ButtonChoice";
 
 export default function TeamPage() {
     const url = useParams();
-
-    const [activeQuestion, setActiveQuestion] = useState(0);
-    const [typeChoice, setTypeChoice] = useState(null)
-    const [showTypeChoice, setShowTypeChoice] = useState(true)
-    const [showNext, setShowNext] = useState(false)
-    const [active, setActive] = useState(null)
-    const [isEmpty, setIsEmpty] = useState(true)
-    const [inputValue, setInputValue] = useState(null)
-    const [itemSelected, setItemSelected] = useState("")
-    const [points, setPoints] = useState(0)
-    const [slide, setSlide] = useState(0)
-    const [userResponses, setUserResponses] = useState([])
-    const [responseSelected, setResponseSelected] = useState(null)
-    const team = url.team === "team-a" ? teamA : teamB
+    const [state, dispatch] = useReducer(TeamReducer, {
+        activeQuestion: 0,
+        typeChoice: null,
+        showTypeChoice: true,
+        showNext: false,
+        active: null,
+        isEmpty: true,
+        inputValue: null,
+        itemSelected: "",
+        points: 0,
+        slide: 0,
+        userResponses: [],
+        responseSelected: null,
+        team: url.team === "team-a" ? teamA : teamB
+    })
 
     const handleClick = () => {
-
-        setSlide((p) => p + 1)
-        setUserResponses([...userResponses, responseSelected])
-
-        if (activeQuestion < team.length - 1) {
-            setActiveQuestion((p) => p + 1);
-        }
-
-        // If the active question is the last of the list
-        if (activeQuestion >= team.length - 1) {
-            setShowTypeChoice(false)
-        } else {
-            setShowTypeChoice(true)
-        }
-
-        setShowNext(false)
-        setTypeChoice(null)
-
-        // If answer selected is true
-        if (itemSelected === team[activeQuestion].reponse) {
-
-            // Points distribution
-            if (typeChoice === 1) {
-                setPoints(points + 1)
-            }
-
-            if (typeChoice === 2) {
-                setPoints(points + 2)
-            }
-
-        }
-
-        // if answer is CASH
-        if (inputValue !== null) {
-            if (inputValue.toLowerCase() === (team[activeQuestion].reponse).toString().toLowerCase()) {
-                setPoints(points + 5)
-            }
-        }
+        dispatch({type: 'next_button_click'})
     };
 
     const handleClickDuo = () => {
-        setTypeChoice(1)
-        setShowTypeChoice(false)
+        dispatch({type: 'button_duo'})
     };
 
     const handleClickCarre = () => {
-        setTypeChoice(2)
-        setShowTypeChoice(false)
+        dispatch({type: 'button_carre'})
     };
 
     const handleClickCash = () => {
-        setTypeChoice(3)
-        setShowTypeChoice(false)
+        dispatch({type: 'button_cash'})
     };
 
     const handleClickVerifyResponse = (e, item) => {
-        setActive(item)
-        setShowNext(true)
-
-        if (item != null) {
-            setItemSelected(item)
-            // Saving answers
-            setResponseSelected(e.target.innerText)
-        } else {
-            setResponseSelected(inputValue)
-        }
+        dispatch({
+            type: 'verify_response',
+            innerText: e.target.innerText,
+            item
+        })
     }
 
     const handleChange = (e) => {
-        const value = e.target.value
-
-        if (value === "") {
-            setIsEmpty(true)
-        } else {
-            setIsEmpty(false)
-            setInputValue(e.target.value)
-        }
+        dispatch({
+            type: 'response_cash_input',
+            value: e.target.value
+        })
     }
 
     return (
@@ -113,34 +67,28 @@ export default function TeamPage() {
                 </h1>
 
                 <TypeChoice
-                    typeChoice={typeChoice}
-                    team={team}
-                    activeQuestion={activeQuestion}
+                    typeChoice={state.typeChoice}
+                    team={state.team}
+                    activeQuestion={state.activeQuestion}
                     handleClick={handleClickVerifyResponse}
                     handleChange={handleChange}
-                    active={active}
-                    empty={isEmpty}
+                    active={state.active}
+                    empty={state.isEmpty}
                 />
 
-                {showNext && <NextButton handleClick={handleClick}
-                                         content={activeQuestion >= team.length - 1 ? 'Valider' : 'Suivant'}/>}
+                {state.showNext && <NextButton handleClick={handleClick}
+                                         content={state.activeQuestion >= state.team.length - 1 ? 'Valider' : 'Suivant'}/>}
 
-                {slide > activeQuestion
-                    ? <Recap questions={team} userResponses={userResponses} points={points}/>
-                    : <Questions team={team} activeQuestion={activeQuestion} points={points}/>
+                {state.slide > state.activeQuestion
+                    ? <Recap questions={state.team} userResponses={state.userResponses} points={state.points}/>
+                    : <Questions team={state.team} activeQuestion={state.activeQuestion} points={state.points}/>
                 }
 
-                {showTypeChoice && (
+                {state.showTypeChoice && (
                     <div className="btn-group mt-4 ml-[50%] -translate-x-[50%] min-h-[50px]">
-                        <button onClick={handleClickDuo} className="btn">
-                            Duo
-                        </button>
-                        <button onClick={handleClickCarre} className="btn">
-                            Carré
-                        </button>
-                        <button onClick={handleClickCash} className="btn">
-                            Cash
-                        </button>
+                        <ButtonChoice className="btn" handleclick={handleClickDuo} text="Duo" />
+                        <ButtonChoice className="btn" handleclick={handleClickCarre} text="Carré" />
+                        <ButtonChoice className="btn" handleclick={handleClickCash} text="Cash" />
                     </div>
                 )}
 
