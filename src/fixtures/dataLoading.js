@@ -1,6 +1,6 @@
 const BASE_API = "https://restapi.fr/api";
 export async function dataLoading(data) {
-  const response = await fetch(`${BASE_API}/questions`, {
+  const response = await fetch(`${BASE_API}/categories`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -16,7 +16,7 @@ export async function dataLoading(data) {
 
 export async function data() {
   try {
-    const response = await fetch(`${BASE_API}/questions`);
+    const response = await fetch(`${BASE_API}/categories`);
     if (response.ok) {
       return await response.json();
     } else {

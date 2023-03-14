@@ -1,9 +1,8 @@
 import styles from "./formPage.module.scss";
-
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./schemaForm/schemaForm";
-import { useState, useReducer } from "react";
+import { useState, useReducer, Fragment } from "react";
 import { reducerFormQuestion } from "./reducer/reducerFormQuestion";
 import ListQuestion from "./components/listQuestion/ListQuestion";
 import Input from "./input/Input";
@@ -15,22 +14,25 @@ export default function FormPage() {
   const [counter, setCounter] = useState(0);
   const [defaultResponse, setDefaultResponse] = useState("");
   const validCounter = 2;
+
   const initialValues = {
     id: crypto.randomUUID(),
     question: "",
     response: "",
-    square: [
-      { indice_1: "" },
-      { indice_2: "" },
-      { indice_3: "" },
-      { indice_4: "" },
-    ],
-    duo: [{ indice_1: "" }, { indice_2: "" }],
+    arr: { indice: "roger" },
+    square: [{ indice: "" }, { indice: "" }, { indice: "" }, { indice: "" }],
+    duo: [{ indice: "" }, { indice: "" }],
   };
-  const { register, handleSubmit, reset } = useForm({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
     initialValues,
     resolver: yupResolver(schema),
   });
+
   function handleChange(e) {
     e.stopPropagation();
     setDefaultResponse(e.target.value);
@@ -55,6 +57,7 @@ export default function FormPage() {
   async function handleAddApiQuestions() {
     if (state.questions.length >= validCounter) {
       const response = await createQuizz(state.questions);
+
       reset();
       setCounter(0);
       dispatch({
@@ -62,6 +65,7 @@ export default function FormPage() {
       });
     }
   }
+
   return (
     <div className={`${styles.backgroundQuestion}`}>
       <div className="container mx-auto py-4">
@@ -69,9 +73,12 @@ export default function FormPage() {
           <h2 className={`${styles.hs2}`}>Création du questionnaire</h2>
           <form onSubmit={handleSubmit(submit)}>
             <span className={` ${styles.counter} text-4xl drop-shadow-xl`}>
-              {counter}/15
+              {counter}/7
             </span>
-            <div className="relative mb-2" data-te-input-wrapper-init>
+            <div
+              className="relative mb-2 flex flex-col"
+              data-te-input-wrapper-init
+            >
               <textarea
                 className="input input-bordered w-full max-w"
                 id="question"
@@ -79,9 +86,15 @@ export default function FormPage() {
                 placeholder="Entrer votre question"
                 {...register("question", { required: true })}
               ></textarea>
+              <div className="text-error text-sm">
+                {errors?.question && errors.question.message}
+              </div>
             </div>
 
-            <div className="relative mb-2" data-te-input-wrapper-init>
+            <div
+              className="relative mb-2 flex flex-col"
+              data-te-input-wrapper-init
+            >
               <input
                 onInput={(e) => handleChange(e)}
                 type="text"
@@ -90,63 +103,79 @@ export default function FormPage() {
                 placeholder="response"
                 {...register("response", { required: true })}
               />
+              <div className="text-error text-sm">
+                {errors?.response && errors.response.message}
+              </div>
             </div>
             <div className="my-2">
               <h3>Entrer les indices pour le carré</h3>
             </div>
+
             <div className="flex flex-wrap">
-              <Input
-                register={register}
-                name={"indice_1"}
-                options={{
-                  name: "square[0]",
-                  options: { disabled: true },
-                }}
-                defaultResponse={defaultResponse}
-              />
-              <Input
-                register={register}
-                name={"indice_2"}
-                options={{
-                  name: "square[1]",
-                }}
-              />
-              <Input
-                register={register}
-                name={"indice_3"}
-                options={{
-                  name: "square[2]",
-                }}
-              />
-              <Input
-                register={register}
-                name={"indice_4"}
-                options={{
-                  name: "square[3]",
-                }}
-              />
+              {initialValues.square.map((p, index) =>
+                index === 0 ? (
+                  <Input
+                    key={index}
+                    register={register}
+                    name={`reponse_auto`}
+                    options={{
+                      name: `square[${index}]`,
+                      options: { disabled: true },
+                    }}
+                    defaultResponse={defaultResponse}
+                  />
+                ) : (
+                  <Input
+                    key={index}
+                    register={register}
+                    name={`indice_${index}`}
+                    options={{
+                      name: `square[${index}].indice`,
+                    }}
+                    errors={
+                      errors.square?.length &&
+                      errors.square[index]?.indice &&
+                      errors.square[index].indice.message
+                    }
+                  />
+                )
+              )}
             </div>
+
             <div className="my-2">
               <h3>Indice du DUO</h3>
             </div>
-            <div className="flex flex-wrap">
-              <Input
-                register={register}
-                name={"duo_1"}
-                options={{
-                  name: "duo[0]",
-                  options: { disabled: true },
-                }}
-                defaultResponse={defaultResponse}
-              />
-              <Input
-                register={register}
-                name={"duo_2"}
-                options={{
-                  name: "duo[1]",
-                }}
-              />
+            <div className="flex flex-wrap mb-2">
+              {initialValues.duo.map((p, index) =>
+                index === 0 ? (
+                  <Input
+                    key={index}
+                    register={register}
+                    name={`reponse_auto`}
+                    options={{
+                      name: `duo[${index}]`,
+                      options: { disabled: true },
+                    }}
+                    defaultResponse={defaultResponse}
+                  />
+                ) : (
+                  <Input
+                    key={index}
+                    register={register}
+                    name={`indice_${index}`}
+                    options={{
+                      name: `duo[${index}].indice`,
+                    }}
+                    errors={
+                      errors.duo?.length &&
+                      errors.duo[index]?.indice &&
+                      errors.duo[index].indice.message
+                    }
+                  />
+                )
+              )}
             </div>
+
             <div className=" flex-wrap flex justify-center gap-5	">
               <button
                 disabled={state.questions.length >= 2 ? true : false}

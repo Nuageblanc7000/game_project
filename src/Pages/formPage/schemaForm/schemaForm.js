@@ -8,5 +8,15 @@ export const schema = yup.object({
   response: yup
     .string()
     .required("Ce champ est obligatoire")
-    .max(40, "veuillez mettre au maximum 40 caractères"),
+    .max(20, "veuillez mettre au maximum 20 caractères"),
+  square: yup.array().of(
+    yup.object({
+      indice: yup.string().min(1, "minimum 4 caractères"),
+    })
+  ),
+  duo: yup.array().of(
+    yup.object({
+      indice: yup.string().min(1, "minimum 4 caractères"),
+    })
+  ),
 });

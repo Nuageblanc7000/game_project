@@ -1,8 +1,14 @@
 import styles from "./input.module.scss";
-export default function Input({ register, options, name, defaultResponse }) {
+export default function Input({
+  register,
+  options,
+  name,
+  defaultResponse,
+  errors = null,
+}) {
   return (
     <div
-      className={`relative mb-6 mx-1 ${styles.formWidth}`}
+      className={`relative mb-1 mx-1 ${styles.formWidth} flex flex-col`}
       data-te-input-wrapper-init
     >
       <input
@@ -13,6 +19,7 @@ export default function Input({ register, options, name, defaultResponse }) {
         {...register(options.name, { ...options.options })}
         value={defaultResponse ?? defaultResponse}
       />
+      <div className="text-error text-sm">{errors}</div>
     </div>
   );
 }

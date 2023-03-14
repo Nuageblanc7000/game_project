@@ -8,8 +8,12 @@ export function reducerFormQuestion(state, action) {
           {
             ...action.quest,
             id: crypto.randomUUID(),
-            square: (action.quest[0] = action.defaultResponse),
-            duo: (action.quest[0] = action.defaultResponse),
+            square: action.quest.square.map((s, i) =>
+              i === 0 ? (action.quest.square[i] = action.defaultResponse) : s
+            ),
+            duo: action.quest.duo.map((s, i) =>
+              i === 0 ? (action.quest.duo[i] = action.defaultResponse) : s
+            ),
           },
         ],
       };
