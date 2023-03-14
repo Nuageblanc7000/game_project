@@ -5,8 +5,7 @@ export default function TypeChoice({
                                        handleClick,
                                        handleChange,
                                        active,
-                                       empty,
-                                       rightAnswer
+                                       empty
                                    }) {
 
 
@@ -17,7 +16,7 @@ export default function TypeChoice({
                 {team[activeQuestion].indicesParDeux.map((item, index) => {
                     return (
                         <button onClick={(e) => handleClick(e, item)} key={index}
-                                className={`${active == item ? 'bg-primary' : 'bg-primary/75'} hover:bg-primary rounded-lg flex-initial w-80 p-4 text-white font-semibold`}>{item}</button>
+                                className={`${active === item ? 'bg-primary' : 'bg-primary/75'} hover:bg-primary rounded-lg flex-initial w-80 p-4 text-white font-semibold`}>{item}</button>
                     )
                 })}
             </div>

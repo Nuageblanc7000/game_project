@@ -4,6 +4,8 @@ import TypeChoice from './components/TypeChoice';
 import teamA from "../../data/teamA.json";
 import teamB from "../../data/teamB.json";
 import NextButton from "./components/NextButton";
+import Recap from "./components/Recap";
+import Questions from "./components/Questions";
 
 export default function TeamPage() {
     const url = useParams();
@@ -61,8 +63,6 @@ export default function TeamPage() {
                 setPoints(points + 5)
             }
         }
-
-
     };
 
     const handleClickDuo = () => {
@@ -81,9 +81,6 @@ export default function TeamPage() {
     };
 
     const handleClickVerifyResponse = (e, item) => {
-
-
-        // setUserResponses([...userResponses, e.target.innerText])
         setActive(item)
         setShowNext(true)
 
@@ -111,7 +108,7 @@ export default function TeamPage() {
         <div className="flex justify-center items-center h-full bg-secondary/20">
             <div className="container mx-auto p-4">
 
-                <h1 className="text-2xl mt-4 font-bold">
+                <h1 className="text-2xl text-danger mt-4 font-bold">
                     {url.team === "team-a" ? "Equipe A" : "Equipe B"}
                 </h1>
 
@@ -128,34 +125,10 @@ export default function TeamPage() {
                 {showNext && <NextButton handleClick={handleClick}
                                          content={activeQuestion >= team.length - 1 ? 'Valider' : 'Suivant'}/>}
 
-                {slide > activeQuestion ? (
-                    <>
-                        <h1 className="font-bold text-4xl text-center">Récapitulatif de vos réponses</h1>
-                        <ul className="bg-white p-4 mt-3">
-                        {userResponses.map(r => {
-                            return (
-                                <>
-                                    <li className="p-2">{r}</li>
-                                </>
-                            )
-                        })}
-                        </ul>
-                    </>
-                ) : (
-                    <div className="flex mt-4">
-                        <div
-                            className="flex flex-col justify-center items-center flex-initial w-20 bg-white rounded-lg mr-3 bg-secondary text-secondary-content">
-                            <p>Points</p>
-                            <span className="font-bold text-6xl">{points}</span>
-                        </div>
-                        <div
-                            className={`flex-1 p-4 rounded-lg min-h-[150px] bg-white flex justify-center items-center shadow-xl border border-neutral-200`}>
-                            <h2 className={`font-bold text-neutral`}>
-                                {team[activeQuestion].question}
-                            </h2>
-                        </div>
-                    </div>
-                )}
+                {slide > activeQuestion
+                    ? <Recap questions={team} userResponses={userResponses} points={points}/>
+                    : <Questions team={team} activeQuestion={activeQuestion} points={points}/>
+                }
 
                 {showTypeChoice && (
                     <div className="btn-group mt-4 ml-[50%] -translate-x-[50%] min-h-[50px]">
