@@ -11,6 +11,7 @@ import ButtonChoice from "./components/ButtonChoice";
 
 export default function TeamPage() {
     const url = useParams();
+    const team = url.team === "team-a" ? teamA : teamB
     const [state, dispatch] = useReducer(TeamReducer, {
         activeQuestion: 0,
         typeChoice: null,
@@ -23,12 +24,14 @@ export default function TeamPage() {
         points: 0,
         slide: 0,
         userResponses: [],
-        responseSelected: null,
-        team: url.team === "team-a" ? teamA : teamB
+        responseSelected: null
     })
 
     const handleClick = () => {
-        dispatch({type: 'next_button_click'})
+        dispatch({
+            type: 'next_button_click',
+            team
+        })
     };
 
     const handleClickDuo = () => {
@@ -68,7 +71,7 @@ export default function TeamPage() {
 
                 <TypeChoice
                     typeChoice={state.typeChoice}
-                    team={state.team}
+                    team={team}
                     activeQuestion={state.activeQuestion}
                     handleClick={handleClickVerifyResponse}
                     handleChange={handleChange}
@@ -77,11 +80,11 @@ export default function TeamPage() {
                 />
 
                 {state.showNext && <NextButton handleClick={handleClick}
-                                         content={state.activeQuestion >= state.team.length - 1 ? 'Valider' : 'Suivant'}/>}
+                                         content={state.activeQuestion >= team.length - 1 ? 'Valider' : 'Suivant'}/>}
 
                 {state.slide > state.activeQuestion
-                    ? <Recap questions={state.team} userResponses={state.userResponses} points={state.points}/>
-                    : <Questions team={state.team} activeQuestion={state.activeQuestion} points={state.points}/>
+                    ? <Recap questions={team} userResponses={state.userResponses} points={state.points}/>
+                    : <Questions team={team} activeQuestion={state.activeQuestion} points={state.points}/>
                 }
 
                 {state.showTypeChoice && (

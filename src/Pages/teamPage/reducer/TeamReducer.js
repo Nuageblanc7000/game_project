@@ -6,15 +6,15 @@ export default function TeamReducer(state, action) {
                 ...state,
                 slide: state.slide + 1,
                 userResponses: [...state.userResponses, state.responseSelected],
-                activeQuestion: state.activeQuestion < state.team.length - 1 ? state.activeQuestion + 1 : state.activeQuestion,
-                showTypeChoice: state.activeQuestion < state.team.length - 1,
+                activeQuestion: state.activeQuestion < action.team.length - 1 ? state.activeQuestion + 1 : state.activeQuestion,
+                showTypeChoice: state.activeQuestion < action.team.length - 1,
                 showNext: false,
                 typeChoice: null,
-                points: state.itemSelected === state.team[state.activeQuestion].reponse && state.typeChoice === 1
+                points: state.itemSelected === action.team[state.activeQuestion].reponse && state.typeChoice === 1
                     ? state.points + 1
-                    : state.itemSelected === state.team[state.activeQuestion].reponse && state.typeChoice === 2
+                    : state.itemSelected === action.team[state.activeQuestion].reponse && state.typeChoice === 2
                         ? state.points + 2
-                        : state.inputValue !== null && state.inputValue.toLowerCase() === (state.team[state.activeQuestion].reponse).toString().toLowerCase()
+                        : state.inputValue !== null && state.inputValue.toLowerCase() === (action.team[state.activeQuestion].reponse).toString().toLowerCase()
                             ? state.points + 5
                             : state.points
             }

@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "question": "De combien de pilliers est composé la culture d'entreprise ?",
+        "question": "Test 1 ?",
         "reponse": 4,
         "indicesParDeux": [6, 4],
         "indicesParQuatre": [3, 4, 6, 5]
     },
     {
         "id": 2,
-        "question": "De quoi un rite est-il constitué ?",
+        "question": "Test 12 ?",
         "reponse": "Pratique des valeurs",
         "indicesParDeux": ["Pratique des valeurs", "Croyance"],
         "indicesParQuatre": ["Philosophie", "Croyance", "Pratique des valeurs", "Représention extérieure"]
