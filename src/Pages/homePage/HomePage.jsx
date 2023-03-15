@@ -5,7 +5,6 @@ import sciences from "../../assets/images/sciences.svg";
 // import politic from "../../assets/images/politic.svg";
 // import geography from "../../assets/images/geography.svg";
 import { Link, useLoaderData } from "react-router-dom";
-
 export default function HomePage() {
   const categories = useLoaderData();
   return (
@@ -44,7 +43,7 @@ export default function HomePage() {
                     </h2>
                     <p>{c.description}</p>
                   </div>
-                  <Link className="btn btn-primary" to={`/categories/${c._id}`}>
+                  <Link className="btn btn-primary" to={`/categorie/${c._id}`}>
                     Découvrir
                   </Link>
                 </div>
