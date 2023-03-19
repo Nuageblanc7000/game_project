@@ -1,28 +1,19 @@
 import styles from "./formPage.module.scss";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "./schemaForm/schemaForm";
-import { useState, useReducer, Fragment } from "react";
+import { schema, initialValues } from "./schemaForm/schemaForm";
+import { useReducer } from "react";
 import { reducerFormQuestion } from "./reducer/reducerFormQuestion";
 import ListQuestion from "./components/listQuestion/ListQuestion";
 import Input from "./input/Input";
-import { createQuizz } from "../../apis/createQuizz";
+import { createQuizz } from "../../apis";
 export default function FormPage() {
+  const validCounter = 2;
   const [state, dispatch] = useReducer(reducerFormQuestion, {
     questions: [],
+    defaultResponse: "",
+    counter: 0,
   });
-  const [counter, setCounter] = useState(0);
-  const [defaultResponse, setDefaultResponse] = useState("");
-  const validCounter = 2;
-
-  const initialValues = {
-    id: crypto.randomUUID(),
-    question: "",
-    response: "",
-    arr: { indice: "roger" },
-    square: [{ indice: "" }, { indice: "" }, { indice: "" }, { indice: "" }],
-    duo: [{ indice: "" }, { indice: "" }],
-  };
   const {
     register,
     handleSubmit,
@@ -34,21 +25,20 @@ export default function FormPage() {
   });
 
   function handleChange(e) {
-    e.stopPropagation();
-    setDefaultResponse(e.target.value);
+    dispatch({
+      type: "SET_DEFAULT_RESPONSE",
+      event: e,
+    });
   }
   function submit(quest) {
-    setCounter((c) => c + 1);
     dispatch({
       type: "ADD_QUEST",
       quest,
-      defaultResponse,
+      defaultResponse: state.defaultResponse,
     });
     reset();
-    setDefaultResponse("");
   }
   function handleDelete(question) {
-    setCounter((c) => c - 1);
     dispatch({
       type: "DELETE_QUEST",
       question,
@@ -57,15 +47,12 @@ export default function FormPage() {
   async function handleAddApiQuestions() {
     if (state.questions.length >= validCounter) {
       const response = await createQuizz(state.questions);
-
-      reset();
-      setCounter(0);
       dispatch({
         type: "CLEAN_QUEST",
+        reset,
       });
     }
   }
-
   return (
     <div className={`${styles.backgroundQuestion}`}>
       <div className="container mx-auto py-4">
@@ -73,7 +60,7 @@ export default function FormPage() {
           <h2 className={`${styles.hs2}`}>Création du questionnaire</h2>
           <form onSubmit={handleSubmit(submit)}>
             <span className={` ${styles.counter} text-4xl drop-shadow-xl`}>
-              {counter}/7
+              {state.counter}/7
             </span>
             <div
               className="relative mb-2 flex flex-col"
@@ -122,7 +109,7 @@ export default function FormPage() {
                       name: `square[${index}]`,
                       options: { disabled: true },
                     }}
-                    defaultResponse={defaultResponse}
+                    defaultResponse={state.defaultResponse}
                   />
                 ) : (
                   <Input
@@ -156,7 +143,7 @@ export default function FormPage() {
                       name: `duo[${index}]`,
                       options: { disabled: true },
                     }}
-                    defaultResponse={defaultResponse}
+                    defaultResponse={state.defaultResponse}
                   />
                 ) : (
                   <Input

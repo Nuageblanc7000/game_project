@@ -1,12 +1,12 @@
 import styles from "./homePage.module.scss";
-// import signUpBack from "../../assets/images/signUp.svg";
 import sciences from "../../assets/images/sciences.svg";
-// import nature from "../../assets/images/nature.svg";
-// import politic from "../../assets/images/politic.svg";
-// import geography from "../../assets/images/geography.svg";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import SearchBar from "./components/searchBar/SearchBar";
+import { useFetchCategories } from "../../hooks/useFetchCategories";
 export default function HomePage() {
-  const categories = useLoaderData();
+  const [categories, setCategories] = useFetchCategories();
+  const [value, setValue] = useState("");
   return (
     <>
       <div className={styles.hero}>
@@ -28,41 +28,51 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="container mx-auto">
+      <div className={`${styles.containerCategories} container mx-auto`}>
+        <SearchBar setValue={setValue}></SearchBar>
         <div className={`${styles.gridCard}`}>
-          {categories.map((c) => (
-            <div
-              key={c._id}
-              className="flex   card bg-base-100  relative rounded-box relative min-h-60  drop-shadow-lg place-items-center "
-            >
-              <div className="flex h-full relative">
-                <div className=" place-items-center p-4">
-                  <div className="my-4 ">
-                    <h2 className="font-bold text-xl my-4">
-                      Categories {c.name}
-                    </h2>
-                    <p>{c.description}</p>
+          {categories.length ? (
+            categories
+              .filter((p) => p.name.toLowerCase().includes(value) && p)
+              .map((p) => (
+                <div
+                  key={p._id}
+                  className={` ${styles.animCat} flex   card bg-base-100  relative rounded-box relative   drop-shadow-lg place-items-center `}
+                >
+                  <div className="flex h-full relative">
+                    <div className=" place-items-center p-4">
+                      <div className="my-4 ">
+                        <h2 className="font-bold text-xl my-4">
+                          Categories {p.name}
+                        </h2>
+                        <p>{p.description}</p>
+                      </div>
+                      <Link
+                        className="btn btn-primary"
+                        to={`/categorie/${p._id}`}
+                      >
+                        Découvrir
+                      </Link>
+                    </div>
+                    <div className={`${styles.space}`}>
+                      <div
+                        className={`${styles.imgCard}  `}
+                        style={{ background: `url(${sciences})` }}
+                      >
+                        <Link
+                          className="btn btn-primary"
+                          to={`/categorie/${p._id}`}
+                        >
+                          Découvrir
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                  <Link className="btn btn-primary" to={`/categorie/${c._id}`}>
-                    Découvrir
-                  </Link>
                 </div>
-                <div className={`${styles.space}`}>
-                  <div
-                    className={`${styles.imgCard}  `}
-                    style={{ background: `url(${sciences})` }}
-                  >
-                    <Link
-                      className="btn btn-primary"
-                      to={`/categorie/${c._id}`}
-                    >
-                      Découvrir
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+              ))
+          ) : (
+            <div> Aucune Catégories </div>
+          )}
         </div>
       </div>
       <div className={`${styles.banner}`}></div>

@@ -20,3 +20,12 @@ export const schema = yup.object({
     })
   ),
 });
+
+export const initialValues = {
+  id: crypto.randomUUID(),
+  question: "",
+  response: "",
+  arr: { indice: "roger" },
+  square: [{ indice: "" }, { indice: "" }, { indice: "" }, { indice: "" }],
+  duo: [{ indice: "" }, { indice: "" }],
+};
